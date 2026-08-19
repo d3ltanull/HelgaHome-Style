@@ -25,7 +25,7 @@ export default function Categories() {
             Наши коллекции
           </p>
           <h2 className="font-display text-4xl text-espresso-900 md:text-5xl">
-            Создано с душой
+            Дари нежно
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-espresso-600 md:text-lg">
             Каждое изделие связано с любовью, чтобы
