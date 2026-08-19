@@ -51,7 +51,7 @@ export default function CategorySlider({ category, index }: CategorySliderProps)
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          slidesPerView={1.15}
+          slidesPerView={1}
           spaceBetween={12}
           pagination={{
             clickable: true,
