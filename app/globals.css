@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream-50: #faf7f2;
+  --color-cream-100: #f5efe6;
+  --color-cream-200: #ebe3d6;
+  --color-cream-300: #ddd2c0;
+
+  --color-espresso-600: #6b5348;
+  --color-espresso-700: #5c4a42;
+  --color-espresso-800: #4a3a34;
+  --color-espresso-900: #3d2e2a;
+
+  --color-terracotta-200: #e8c4b8;
+  --color-terracotta-400: #c47966;
+  --color-terracotta-500: #a65d4d;
+  --color-terracotta-600: #8b4a3a;
+  --color-terracotta-700: #743d30;
+
+  --color-sage-100: #e8ece9;
+  --color-sage-200: #d4ddd6;
+  --color-sage-600: #6b7b6e;
+
+  --color-gold-400: #c4a574;
+
+  --font-display: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  --font-body: var(--font-body), "Lora", Georgia, serif;
+}
+
+@layer base {
+  * {
+    @apply border-cream-300;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  ::selection {
+    @apply bg-terracotta-200 text-espresso-900;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
