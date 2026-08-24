@@ -68,12 +68,20 @@ export default function Contact() {
             Хотите заказать изделие или задать вопрос о коллекции? Напишите нам
             удобным для вас способом.
           </p>
-          <a
-            href={`tel:${phoneNumber}`}
-            className="mt-6 inline-block font-display text-2xl tracking-wide text-terracotta-700 transition-opacity hover:opacity-80"
-          >
-            {phoneDisplay}
-          </a>
+          <div className="mt-6 flex flex-col items-center">
+            <a
+              href={`tel:${phoneNumber}`}
+              className="inline-block font-display text-2xl tracking-wide text-terracotta-700 transition-opacity hover:opacity-80"
+            >
+              {phoneDisplay}
+            </a>
+            <a
+              href="mailto:helgahomestyle@mail.ru"
+              className="mt-2 inline-block font-display text-2xl tracking-wide text-terracotta-700 transition-opacity hover:opacity-80"
+            >
+              helgahomestyle@mail.ru
+            </a>
+          </div>
         </motion.div>
 
         <div className="grid gap-5 md:grid-cols-3">

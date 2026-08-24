@@ -6,7 +6,7 @@ import { Pagination } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { motion, useInView } from "framer-motion";
 import type { Category } from "@/lib/categories";
-import { getCategoryImages } from "@/lib/categories";
+import { getCategoryProducts } from "@/lib/products";
 import SafeImage from "@/components/SafeImage";
 
 import "swiper/css";
@@ -21,7 +21,7 @@ export default function CategorySlider({ category, index }: CategorySliderProps)
   const ref = useRef<HTMLElement>(null);
   const swiperRef = useRef<SwiperType | null>(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const images = getCategoryImages(category);
+  const items = getCategoryProducts(category.id);
 
   return (
     <motion.article
@@ -64,18 +64,29 @@ export default function CategorySlider({ category, index }: CategorySliderProps)
           }}
           className="category-swiper !pb-10"
         >
-          {images.map((src, imageIndex) => (
-            <SwiperSlide key={src}>
-              <div className="overflow-hidden rounded-2xl bg-cream-200 shadow-md shadow-espresso-900/5">
-                <div className="relative aspect-[4/5] overflow-hidden">
+          {items.map((product) => (
+            <SwiperSlide key={product.id} className="!h-auto">
+              <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-cream-300/80 bg-cream-50 shadow-sm shadow-espresso-900/5">
+                <div className="relative aspect-[4/5] overflow-hidden bg-cream-200">
                   <SafeImage
-                    src={src}
-                    alt={`${category.title} — ${imageIndex + 1}`}
+                    src={product.image}
+                    alt={product.title}
                     sizes="(max-width: 640px) 85vw, (max-width: 1024px) 45vw, 25vw"
                     className="object-cover transition-transform duration-500 ease-out hover:scale-110"
                   />
                 </div>
-              </div>
+                <div className="flex flex-1 flex-col px-4 py-4 md:px-5 md:py-5">
+                  <h4 className="font-display text-xl leading-snug text-espresso-900">
+                    {product.title}
+                  </h4>
+                  <p className="mt-2 text-sm leading-relaxed text-espresso-600">
+                    {product.description}
+                  </p>
+                  <p className="mt-3 text-xs tracking-wide text-espresso-600/80">
+                    {product.dimensions}
+                  </p>
+                </div>
+              </article>
             </SwiperSlide>
           ))}
         </Swiper>
