@@ -46,7 +46,37 @@ export default function CategorySlider({ category, index }: CategorySliderProps)
       </div>
 
       <div className="relative px-3 py-4 md:px-6 md:py-6">
-        <Swiper
+        <div className="relative">
+          <div className="pointer-events-none absolute inset-x-0 top-0 z-20">
+            <div className="relative w-full">
+              <div
+                aria-hidden="true"
+                className="aspect-[4/5] w-full sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-40px)/3)] xl:w-[calc((100%-60px)/4)]"
+              />
+              <button
+                type="button"
+                aria-label="Предыдущий слайд"
+                onClick={() => swiperRef.current?.slidePrev()}
+                className="pointer-events-auto absolute left-2 top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream-300/80 bg-cream-50/95 text-espresso-700 shadow-md transition-colors hover:border-terracotta-400/50 hover:text-terracotta-600 md:left-4 md:h-11 md:w-11"
+              >
+                <span aria-hidden="true" className="text-lg leading-none">
+                  ‹
+                </span>
+              </button>
+              <button
+                type="button"
+                aria-label="Следующий слайд"
+                onClick={() => swiperRef.current?.slideNext()}
+                className="pointer-events-auto absolute right-2 top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream-300/80 bg-cream-50/95 text-espresso-700 shadow-md transition-colors hover:border-terracotta-400/50 hover:text-terracotta-600 md:right-4 md:h-11 md:w-11"
+              >
+                <span aria-hidden="true" className="text-lg leading-none">
+                  ›
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <Swiper
           modules={[Pagination]}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
@@ -76,41 +106,30 @@ export default function CategorySlider({ category, index }: CategorySliderProps)
                   />
                 </div>
                 <div className="flex flex-1 flex-col px-4 py-4 md:px-5 md:py-5">
-                  <h4 className="font-display text-xl leading-snug text-espresso-900">
+                  <h4 className="font-display text-2xl font-semibold leading-snug text-espresso-900">
                     {product.title}
                   </h4>
-                  <p className="mt-2 text-sm leading-relaxed text-espresso-600">
+                  <p className="mt-2 text-sm text-neutral-600 whitespace-pre-line">
                     {product.description}
                   </p>
-                  <p className="mt-3 text-xs tracking-wide text-espresso-600/80">
-                    {product.dimensions}
+                  <p className="mt-4 text-xs text-neutral-500">
+                    {product.materials}
+                  </p>
+                  <p className="mt-1 text-xs text-neutral-500 whitespace-pre-line">
+                    {product.size}
+                  </p>
+                  <p className="mt-1 text-xs text-neutral-500">
+                    {product.order}
+                  </p>
+                  <p className="mt-auto pt-10 font-bold text-lg text-espresso-900">                      
+                    {product.price}
                   </p>
                 </div>
               </article>
             </SwiperSlide>
           ))}
-        </Swiper>
-
-        <button
-          type="button"
-          aria-label="Предыдущий слайд"
-          onClick={() => swiperRef.current?.slidePrev()}
-          className="absolute left-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream-300/80 bg-cream-50/95 text-espresso-700 shadow-md transition-colors hover:border-terracotta-400/50 hover:text-terracotta-600 md:left-3 md:h-11 md:w-11"
-        >
-          <span aria-hidden="true" className="text-lg leading-none">
-            ‹
-          </span>
-        </button>
-        <button
-          type="button"
-          aria-label="Следующий слайд"
-          onClick={() => swiperRef.current?.slideNext()}
-          className="absolute right-1 top-1/2 z-10 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-cream-300/80 bg-cream-50/95 text-espresso-700 shadow-md transition-colors hover:border-terracotta-400/50 hover:text-terracotta-600 md:right-3 md:h-11 md:w-11"
-        >
-          <span aria-hidden="true" className="text-lg leading-none">
-            ›
-          </span>
-        </button>
+          </Swiper>
+        </div>
       </div>
     </motion.article>
   );

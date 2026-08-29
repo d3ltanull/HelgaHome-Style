@@ -23,7 +23,7 @@ export const categories: Category[] = [
     title: "Сумки",
     subtitle: "Изящные аксессуары, созданные с вниманием к каждой детали",
     prefix: "bag",
-    imageCount: 9,
+    imageCount: 5,
     extension: "jpg",
   },
   {

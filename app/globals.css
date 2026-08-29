@@ -27,6 +27,10 @@
   --font-body: var(--font-body), "Lora", Georgia, serif;
 }
 
+.category-swiper .swiper-pagination-bullet-active {
+  background-color: #682d29 !important;
+}
+
 @layer base {
   * {
     @apply border-cream-300;
