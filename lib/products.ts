@@ -9,6 +9,7 @@ export interface Product {
   size: string;
   price: string;
   image: string;
+  order: string;
 }
 
 // Edit each product individually below.
