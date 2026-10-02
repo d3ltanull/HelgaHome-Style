@@ -51,7 +51,7 @@ export default function CategorySlider({ category, index }: CategorySliderProps)
             <div className="relative w-full">
               <div
                 aria-hidden="true"
-                className="aspect-[4/5] w-full sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-40px)/3)] xl:w-[calc((100%-60px)/4)]"
+                className="aspect-[9/16] w-full sm:w-[calc((100%-16px)/2)] lg:w-[calc((100%-40px)/3)] xl:w-[calc((100%-60px)/4)]"
               />
               <button
                 type="button"
@@ -97,7 +97,7 @@ export default function CategorySlider({ category, index }: CategorySliderProps)
           {items.map((product) => (
             <SwiperSlide key={product.id} className="!h-auto">
               <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-cream-300/80 bg-cream-50 shadow-sm shadow-espresso-900/5">
-                <div className="relative aspect-[4/5] overflow-hidden bg-cream-200">
+                <div className="relative aspect-[9/16] overflow-hidden bg-cream-200">
                   <SafeImage
                     src={product.image}
                     alt={product.title}
