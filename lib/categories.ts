@@ -15,7 +15,7 @@ export const categories: Category[] = [
     title: "Игрушки",
     subtitle: "Уютные handmade спутники, в каждой петле — тепло и забота",
     prefix: "toy",
-    imageCount: 12,
+    imageCount: 9,
     extension: "jpg",
   },
   {
@@ -31,7 +31,7 @@ export const categories: Category[] = [
     title: "Сервировочные наборы",
     subtitle: "Изящная сервировка для тёплых застолий и особых моментов",
     prefix: "set",
-    imageCount: 7,
+    imageCount: 6,
     extension: "jpg",
   },
   {
@@ -39,7 +39,7 @@ export const categories: Category[] = [
     title: "Корзинки",
     subtitle: "Аккуратное хранение с неповторимым домашним шармом",
     prefix: "basket",
-    imageCount: 8,
+    imageCount: 11,
     extension: "jpg",
   },
 ];
